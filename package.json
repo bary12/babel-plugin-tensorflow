@@ -1,0 +1,33 @@
+{
+  "name": "babel-plugin-tensorflow",
+  "version": "1.0.0",
+  "description": "Transform Javascript operators to TensorFlow.js operators",
+  "main": "dist/index.js",
+  "author": "Bary Levi <barylevi@gmail.com> (https://github.com/bary12)",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "babel src/ --out-dir dist/ --source-maps",
+    "test": "mocha test/ --require @babel/register",
+    "lint": "eslint src/ test/",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.42",
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/register": "^7.0.0-beta.42",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "dedent": "^0.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1",
+    "mocha": "^5.0.5",
+    "semantic-release": "^15.1.4",
+    "travis-deploy-once": "^4.4.1"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0-beta.42"
+  }
+}
