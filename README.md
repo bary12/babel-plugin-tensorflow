@@ -26,6 +26,33 @@ into
 tf.add(tf.mul(tf.scalar(5), tf.tensor([1, 2])), tf.tensor([2, 2]));
 ```
 
+[More examples](./examples.md)
+
+## Install
+
+With npm
+
+```bash
+npm install --save-dev babel-plugin-tensorflow
+```
+
+With [yarn](https://yarnpkg.com)
+
+```bash
+yarn add --dev babel-plugin-tensorflow
+```
+
+And add the plugin to your `.babelrc` file
+
+```json
+{
+  "plugins": [
+    "tensorflow"
+  ]
+}
+```
+
+
 ## Known limitations
 
 * Currently built only for babel 7.
