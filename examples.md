@@ -22,7 +22,7 @@ becomes
 tf.scalar(5);
 ```
 
-# Add literals
+# Addition
 
 ```javascript
 tf(5 + 6);
@@ -34,19 +34,19 @@ becomes
 tf.add(tf.scalar(5), tf.scalar(6));
 ```
 
-# Add many literals
+# More operations
 
 ```javascript
-tf(5 + 6 + 7);
+tf(5 + 6 * 7);
 ```
 
 becomes
 
 ```javascript
-tf.add(tf.add(tf.scalar(5), tf.scalar(6)), tf.scalar(7));
+tf.add(tf.scalar(5), tf.mul(tf.scalar(6), tf.scalar(7)));
 ```
 
-# Tensor literal
+# Tensor Literals
 
 ```javascript
 tf([[1, 2], [3, 4]]);
@@ -58,7 +58,7 @@ becomes
 tf.tensor([[1, 2], [3, 4]]);
 ```
 
-# scalar mult
+# Operations on tensors
 
 ```javascript
 tf(5 * [1, 2] + [2, 2]);
@@ -70,7 +70,7 @@ becomes
 tf.add(tf.mul(tf.scalar(5), tf.tensor([1, 2])), tf.tensor([2, 2]));
 ```
 
-# variables
+# Working with Variables
 
 ```javascript
 const A = tf([[1, 2], [3, 4]]);
@@ -88,7 +88,7 @@ const b = tf.tensor([2, 2]);
 tf.add(tf.mul(A, w), b);
 ```
 
-# transpose
+# Transpose
 
 ```javascript
 tf([[1, 5, 4], [9, 9, 9]] ^ t);
@@ -100,7 +100,7 @@ becomes
 tf.transpose(tf.tensor([[1, 5, 4], [9, 9, 9]]));
 ```
 
-# other functions
+# Other Functions
 
 ```javascript
 tf(abs(5) + sin(-6))
@@ -112,7 +112,7 @@ becomes
 tf.add(tf.abs(tf.scalar(5)), tf.sin(tf.neg(tf.scalar(6))));
 ```
 
-# Does no touch unkown binary and unary operators
+# Does not touch unkown binary and unary operators
 
 ```javascript
 tf(1 || ~2);
@@ -124,7 +124,7 @@ becomes
 tf.scalar(1) || ~tf.scalar(2);
 ```
 
-# No tf - int literal
+# Without tf(), nothing changes.
 
 ```javascript
 5;
